@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "inputpen.h": "c",
+        "models.h": "c",
+        "colors.h": "c",
+        "string.h": "c",
+        "cmath": "c",
+        "*.tcc": "c",
+        "type_traits": "c"
+    },
+    "C_Cpp.default.includePath": ["/opt/palmdev/sdk-5r3/include"]
+}

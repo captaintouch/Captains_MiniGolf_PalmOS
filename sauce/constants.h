@@ -1,0 +1,24 @@
+#ifndef CONSTANTS_H_
+#define CONSTANTS_H_
+
+#define APP_CREATOR_ID 'CGLF'
+#define FEATUREMEM_SAVESTATE 0x1001
+
+#define GAME_MAX_ATTEMPTS 5
+
+#define MAINMENU_HEADER_HEIGHT 20
+#define MAINMENU_HEIGHT 160
+#define MAINMENU_WIDTH 160
+
+// Define size and origin for the playing field
+#define GAMEWINDOW_X 0
+#define GAMEWINDOW_Y 30
+#define GAMEWINDOW_HEIGHT 130
+#define GAMEWINDOW_WIDTH 160
+
+#define SCOREWINDOW_X 0
+#define SCOREWINDOW_Y 0
+#define SCOREWINDOW_HEIGHT 30
+#define SCOREWINDOW_WIDTH 160
+
+#endif

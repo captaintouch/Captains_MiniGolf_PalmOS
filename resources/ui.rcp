@@ -1,0 +1,167 @@
+APPLICATION         ID 1 "CGLF"
+VERSION             ID 1 "0.6"
+
+ICON
+BEGIN
+	BITMAP "resources/assets/icon-1.bmp" BPP 1
+	BITMAP "resources/assets/icon.bmp" BPP 8 TRANSPARENTINDEX 4
+	BITMAP "resources/assets/icon-144.bmp" BPP 8 DENSITY 144 TRANSPARENTINDEX 4
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "resources/assets/iconsmall-1.bmp" BPP 1
+	BITMAP "resources/assets/iconsmall.bmp" BPP 8 TRANSPARENTINDEX 4
+	BITMAP "resources/assets/iconsmall-144.bmp" BPP 8 DENSITY 144 TRANSPARENTINDEX 4
+END
+
+FORM ID 1000 AT ( 0 0 160 160 )
+NOSAVEBEHIND NOFRAME
+MENUID 1000
+BEGIN
+END
+
+FORM ID 2000 AT ( 0 0 160 160 )
+NOSAVEBEHIND NOFRAME
+BEGIN
+END
+
+MENU ID 1000
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Scroll playfield" ID 1000
+		MENUITEM "Reset level" ID 1001
+		MENUITEM "Exit game" ID 1003
+	END
+
+	PULLDOWN "Level Editor"
+	BEGIN
+		MENUITEM "Start/Stop editing" ID 1010
+		MENUITEM "Create new level" ID 1013
+		MENUITEM "Add item" ID 1011
+		MENUITEM "Delete selected" ID 1012
+	END
+
+	PULLDOWN "Info"
+	BEGIN
+		MENUITEM "About" ID 2000
+	END
+END
+
+
+FORM ID 2001 AT ( 2 2 156 156 )
+MODAL
+BEGIN
+        TITLE "Select your level pack"
+	
+	BUTTON "Start" ID 1000 AT (10 134 40 17) BOLDFRAME
+	BUTTON "New..." ID 1003 AT (59 134 40 17) RIGHTANCHOR
+	BUTTON "Cancel" ID 1001 AT (108 134 40 17) RIGHTANCHOR
+	LIST ID 1002 AT (10 24 133 101) VISIBLEITEMS 9
+END
+
+FORM ID 2002 AT ( 4 79 152 77 )
+ FRAME  MODAL DEFAULTBTNID 2010
+BEGIN
+    TITLE "Create new levelpack"
+	LABEL "Name your levelpack:" AUTOID AT (4 19) FONT 1
+	FIELD ID 2010 AT (4 36 133 14) MAXCHARS 20 EDITABLE UNDERLINED  
+	GRAFFITISTATEINDICATOR AT (141 37)
+	BUTTON "Create" ID 2011 AT (5 55 78 14)
+	BUTTON "Cancel" AUTOID AT (91 55 56 14)
+END
+
+FORM ID 1001 AT ( 2 2 156 156 )
+MODAL
+BEGIN
+        TITLE "Select item to add"
+
+	BUTTON "Add" ID 1000 AT (10 134 53 17) BOLDFRAME
+	BUTTON "Cancel" ID 1001 AT (95 135 53 17) RIGHTANCHOR
+	LIST "Wall" "Windmill" "Grass" "Ufo" "Chicken" ID 1002 AT (10 24 133 101) VISIBLEITEMS 9
+END
+
+FORM ID 3000 AT ( 0 0 160 160 )
+MODAL
+BEGIN
+    TITLE "Captain's MiniGolf"
+	FORMBITMAP AT (5 20) BITMAP 1020
+
+	LABEL "Created in the summer of" AUTOID AT (37 15) 
+	LABEL "2024, this game is a nostalgic"  AUTOID AT (37 26) 
+	LABEL "experiment to see if I could"  AUTOID AT (37 37) 
+	LABEL "still make a Palm OS game after 20"  AUTOID AT (5 48) 
+	LABEL "years. The platform may be old, but" AUTOID AT (5 59)
+	LABEL "it's soul and charming community" AUTOID AT (5 70)
+	LABEL "remains close to my heart..." AUTOID AT (5 81)
+
+	LABEL "Mastodon: " AUTOID AT (5 92) FONT 1
+	LABEL "@rxpz@social.linux.pizza" AUTOID AT (5 103)
+	LABEL "Web: " AUTOID AT (5 114) FONT 1
+	LABEL "https://ctrl-c.club/~captain" AUTOID AT (5 125)
+
+	BUTTON "Cheers" AUTOID AT (5 139 35 15)
+	BUTTON "Acknowledgements" ID 3000 AT (45 139 110 15)
+END
+
+ALERT ID 1051
+BEGIN
+    TITLE "Save new level"
+    MESSAGE "Save changes?"
+    BUTTONS "Save" "No"
+END
+
+ALERT ID 1052
+BEGIN
+    TITLE "Save level"
+    MESSAGE "Update current level or save as a new level?"
+    BUTTONS "Update" "As new level" "Try"
+END
+
+ALERT ID 1002
+BEGIN
+    TITLE "Out of moves"
+    MESSAGE "Better luck next time!"
+    BUTTONS "Try again" "Exit"
+END
+
+ALERT ID 1003
+BEGIN
+    TITLE "Champ!"
+    MESSAGE "You completed this levelpack, congratulations!"
+    BUTTONS "To the main menu"
+END
+
+ALERT ID 1004
+BEGIN
+    TITLE "Empty level pack!"
+    MESSAGE "Dropping you into the level editor since this level pack does not contain any levels yet."
+    BUTTONS "Ok"
+END
+
+ALERT ID 2000
+BEGIN
+    TITLE "Captain's MiniGolf"
+    MESSAGE "Red alert! This is an early beta with many features still in the pipeline!\nLet me know what you think, contact details are in the about section!\nEnjoy!"
+    BUTTONS "Gotcha"
+END
+
+ALERT ID 3000
+BEGIN
+    TITLE "Acknowledgements"
+    MESSAGE "Palm OS Community at PalmDB.net (check out their discord!), Windmill and grass sprites: carchagui @ deviantart.com, Chicken sprite: Daniel Eddeland (OpenGameArt.org)"
+    BUTTONS "Ok"
+END
+
+STRING 1000 "Captain's MiniGolf"
+STRING 1001 "Captain's"
+STRING 1002 "MiniGolf"
+STRING 1003 "Practice mode"
+STRING 1004 "Options in menu"
+STRING 1005 "Level"
+STRING 1006 "Editor"
+STRING 1007 "Practice"
+STRING 1008 "New Game"
+STRING 1009 "Create level"
+STRING 1010 "About"

@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Prc",
+            "command": "make",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "CP",
+            "dependsOn": [
+                "Prc",
+            ],
+            "command": "/home/pieterjan/Downloads/cloudpilot-emu-master/src/cloudpilot/cloudpilot-emu -l 6667 /home/pieterjan/Downloads/cloudpilot-emu-master/src/cloudpilot/output.image -s cloudpilotStartDebug.cp",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Run",
+            "dependsOn": [
+                "Prc",
+                "CP"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        }
+    ]
+}
