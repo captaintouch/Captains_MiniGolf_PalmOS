@@ -87,31 +87,6 @@ static double movement_reflectionAngleRad(double incomingAngleRad, double impact
     return reflectionAngleRad;
 }
 
-/*
-static double movement_reflectionAngleRad(double incoming_angle, double normal_angle, double min_exit_angle) {
-    // Convert angles to radians for calculation
-    double incoming_angle_rad = movement_degreesToRadians(incoming_angle);
-    double normal_angle_rad = movement_degreesToRadians(normal_angle);
-    double min_exit_angle_rad = movement_degreesToRadians(min_exit_angle);
-
-    // Calculate the angle of incidence
-    double angle_of_incidence = incoming_angle_rad - normal_angle_rad;
-
-    // Calculate the reflection angle (angle of incidence = angle of reflection)
-    double reflection_angle_rad = normal_angle_rad - angle_of_incidence;
-
-    // Ensure the reflection angle meets the minimum exit angle requirement
-    if (fabs(reflection_angle_rad - normal_angle_rad) < min_exit_angle_rad) {
-        if (reflection_angle_rad < normal_angle_rad) {
-            reflection_angle_rad = normal_angle_rad - min_exit_angle_rad;
-        } else {
-            reflection_angle_rad = normal_angle_rad + min_exit_angle_rad;
-        }
-    }
-
-    return reflection_angle_rad;
-}*/
-
 static void movement_adjustLineAngle(Line *lineToAdjust, Line *wallLine) {
     double currentAngleRad = movement_angleBetweenRad(lineToAdjust->startpoint, lineToAdjust->endpoint);
     double impactAngleRad = movement_angleBetweenRad(wallLine->startpoint, wallLine->endpoint);
