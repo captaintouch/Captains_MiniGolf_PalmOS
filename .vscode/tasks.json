@@ -15,38 +15,28 @@
             }
         },
         {
-            "label": "CP",
+            "label": "CP COLOR",
             "dependsOn": [
-                "Prc",
+                "Prc"
             ],
-            "command": "/home/pieterjan/Downloads/cloudpilot-emu-master/src/cloudpilot/cloudpilot-emu -l 6667 /home/pieterjan/Downloads/cloudpilot-emu-master/src/cloudpilot/output.image -s cloudpilotStartDebug.cp",
+            "command": "cloudpilot-emu -l 6667 emu/m505.image -s emu/cloudpilotStartDebug.cp",
             "type": "shell",
             "options": {
                 "cwd": "${workspaceFolder}"
-            }
+            },
+            "problemMatcher": []
         },
         {
-            "label": "Run",
+            "label": "CP BW",
             "dependsOn": [
-                "Prc",
-                "CP"
+                "Prc"
             ],
-            "dependsOrder": "sequence",
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
+            "command": "cloudpilot-emu -l 6667 emu/m100.image -s emu/cloudpilotStartDebug.cp",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
         }
     ]
 }
