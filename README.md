@@ -13,6 +13,10 @@ Just want to install or play the game? Visit the [main project webpage here](htt
 
 Documentation on how to install/play the game [can be found here](https://github.com/captaintouch/Captains_MiniGolf_PalmOS/blob/main/MANUAL.md).
 
+## DEVELOPMENT BLOG
+- 2024-08-29 [Holy smokes, I just released a MiniGolf game for Palm OS in 2024](https://ctrl-c.club/~captain/posts/2024-08-29-holy-smokes-I-Just-released-a-minigolf-game-for-palmos-in-2024.html)
+- 2024-07-18 [Retro Coding Like It's 1999: My Journey into creating a Palm OS MiniGolf Game](https://ctrl-c.club/~captain/posts/2024-07-18-retro-coding-journey-into-creating-a-palmos-minigolf-game.html)
+
 ## BUILDING
 
 To build this project you need:
